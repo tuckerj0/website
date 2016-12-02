@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="author: tuckerj0">
+    <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/0/05/Shaka-sign.png"/>
+    <title>Jason Tucker</title>
+    <link rel="stylesheet" href="cssFiles/style.css">
+</head>
+<body>
+    <Header>
+        <div id = "headerContainer">
+            <nav>
+                <ul class = "tab">
+                    <li>
+                        <a href="#" id = "contactTab" class="tablinks" onclick="openPage(event, 'contact')">Contact</a>
+                    </li>
+                    <li>
+                        <a href="#" class="tablinks" onclick="openPage(event, 'resume')">Resume</a>
+                    </li>
+                    <li>
+                        <a href="#" class="tablinks" onclick="openPage(event, 'about')">About</a>
+                    </li>
+                    <li>
+                        <a href="#" class="tablinks" onclick="openPage(event, 'home')">Home</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </Header>
+    <div id = "headerContainer">
+        <nav>
+            <ul class = "tab">
+                <li>
+                    <a href="#" id = "contactTab" class="tablinks" onclick="openPage(event, 'contact')">Contact</a>
+                </li>
+                <li>
+                    <a href="#" class="tablinks" onclick="openPage(event, 'resume')">Resume</a>
+                </li>
+                <li>
+                    <a href="#" class="tablinks" onclick="openPage(event, 'about')">About</a>
+                </li>
+                <li>
+                    <a href="#" class="tablinks" onclick="openPage(event, 'home')">Home</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div id = "home" class = "tabcontent">
+        <div id = "homeContainer">
+            <h3 class = "title">Jason Tucker</h3>
+        </div>
+    </div>
+    <div id = "about" class = "tabcontent">
+        <div id= "aboutContainer">
+            <h3 class = "title" id = "aboutTitle">about me</h3>
+            <p>some stuff about me</p>
+        </div>
+    </div>
+    <div id = "resume" class = "tabcontent">
+        <div id = "resumeContainer">
+            <h3 class = "title" id = "resumeHead">resume</h3>
+            <p id = "resume">Resume stuff goes here</p>
+        </div>
+    </div>
+    <div id = "contact" class = "tabcontent">
+        <div id = "contactContainer">
+            <h3 class = "title" id = "contactHead">contact</h3>
+            <section id = "hide">
+                <form name = "myForm" action = "" onsubmit = "return validateForm()" method = "post" id = "formBody">
+                    <label>Name</label>
+                    <input type = "Name" name = "Name">
+                    <label>Email</label>
+                    <input type = "Email" name = "Email">
+                    <label>Subject</label>
+                    <input type = "Subject" name = "Subject">
+                    <label>Message</label>
+                    <textarea type = "Message" name = "Message"></textarea>
+                </form>
+                <button type = "submit" form = "formBody" onclick = "" value = "Submit">Send</button>
+            </section>
+            <section id = "show">Thank you!</section>
+        </div>
+    </div>
+    <footer>
+        <script src = "JSScripts/tabScript.js" type = "text/javascript"></script>
+    </footer>
+</body>
+</html>

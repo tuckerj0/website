@@ -1,0 +1,195 @@
+ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+}
+ul.tab li {
+    float: right;
+}
+ul.tab li a:focus, .active {
+    color: rgba(255,255,255,1);
+}
+ul.tab li a {
+    display: inline-block;
+    color: rgba(255,255,255,.6);
+    text-align: center;
+    padding: .75em 1em;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400px;
+    font-family: "proxima-nova";
+
+}
+ul.tab li a:hover {
+    color: rgba(255,255,255,1);
+}
+#headerContainer{
+    background-color: black;
+    position: relative;
+    width: 100%;
+}
+.tabcontent {
+    display: none;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+#contactTab{
+    border: 2px solid rgba(225,255,255,0.6);
+    margin-right: 1em;
+    margin-left: 1em;
+    padding: .75em 1em;
+
+}
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+#home{
+    display: block;
+}
+#homeContainer{
+     z-index: -5000;
+     display: block;
+     position: absolute;
+     background-color: rgba(25,55,55,.6);
+     background-position: fixed;
+     background-size:cover;
+     top: 0;
+     left: 0;
+     background-size: 100% 100%;
+     min-height: 100%;
+     min-width: 100%;
+}
+#aboutContainer{
+     z-index: -5000;
+     display: block;
+     position: absolute;
+     background-color: rgba(115,55,55,.6);
+     background-position: fixed;
+     background-size:cover;
+     top: 0;
+     left: 0;
+     background-size: 100% 100%;
+     min-height: 100%;
+     min-width: 100%;
+}
+#aboutTitle{
+    line-height:100px;
+    margin-bottom: 2px;
+    border-bottom: 1px solid white;
+}
+#resumeContainer{
+     z-index: -5000;
+     display: block;
+     position: absolute;
+     background-color: rgba(15,55,155,.6);
+     border-bottom: 2px solid black;
+     top: 0;
+     left: 0;
+     height: 100px;
+     width: 100%;
+}
+#resumeHead{
+    line-height: 0px;
+
+}
+#resume{
+    color: black;
+}
+#contactContainer{
+         z-index: -5000;
+         display: block;
+         position: absolute;
+         background-color: rgba(15,55,155,.6);
+         top: 0;
+         left: 0;
+         height: 100px;
+         width: 100%;
+         border-bottom: 2px solid black;
+}
+#contactHead{
+    line-height: 0px;
+}
+h3.title{
+    color: rgba(255,255,255,1);
+    letter-spacing: 4px;
+    font-weight: 700px;
+    font-family: "proxima-nova";
+    font-size: 68px;
+    line-height: 1em;
+    text-transform: uppercase;
+    text-align: center;
+    line-height:700px;
+}
+p{
+    text-align: center;
+    color: rgba(255,255,255,1);
+}
+form{
+    width:400px;
+    height: 30px;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    padding: 10px;
+    margin: top: 5px;
+    font-size: 150%;
+}
+button{
+    margin: 0 auto;
+    margin-top: 550px;
+    text-align: center;
+    display: block;
+    border: 2px solid #555555;
+    background-color: #ffffff;
+    color: #555555;
+    font-size: 20px;
+    padding: 14px 40px;
+    border-radius: 12px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+button:hover{
+    background-color: #555555;
+    color: #ffffff;
+}
+
+input, textarea{
+    width: 150px;
+    height: 15px;
+    padding: 5px 10px;
+    border: 2px solid #004080;
+    border-radius: 4px;
+}
+
+textarea{
+    width: 400px;
+    height: 200px;
+    resize: none;
+}
+#hide{
+
+}
+#show{
+    display: none;
+    font-size:400%;
+   text-align: center;
+   verticle-align: center;
+}
+label{
+    display: block;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
