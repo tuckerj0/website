@@ -16,10 +16,12 @@ function collapseNavbar() {
 $(window).scroll(collapseNavbar);
 $(document).ready(collapseNavbar);
 function hide(){
+	window.onload = function() {
 	var form = document.getElementById("show");
 	form.style.display = 'none';
 	var thanks = document.getElementById("hidden");
 	thanks.style.display = 'block';
+	}
 	return false;
 }
 // jQuery for page scrolling feature - requires jQuery Easing plugin

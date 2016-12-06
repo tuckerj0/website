@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
     <!-- Theme CSS -->
-    <link href="css/mystyle1.css" rel="stylesheet">
+    <link href="css/mystyle2.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -191,26 +191,43 @@
 						</ul>
 					</div>
 					<div>
-					<section class = "show">
-						<form name = "myForm" id = "myForm" class = "contactForm" action = "">
-						<div class = "allform">
-							<div class = "contact">
-								<label class = "clabel">Name</label>
-								<input class = "cform" type = "text" name = "name" id = "name">
+					<script src="js/grayscale1.js"></script>
+					<section id = "show">
+						<form name = "myForm" class = "contactForm" action = "" method = "post" id = "formBody">
+							<div class = "allform">
+								<div class = "contact">
+									<label class = "clabel">Name</label>
+									<input class = "cform" type = "text" name = "Name" id = "Name">
+								</div>
+								<div class = "contact">
+									<label class = "clabel">Email</label>
+									<input class = "cform" type = "Email" name = "Email" id = "Email">
+								</div>
+								<div class = "contactTA">							
+									<label class = "clabel">Message</label>
+									<textarea class = "cform" type = "textarea" name = "Message" id = "Message"></textarea>
+								</div>
 							</div>
-							<div class = "contact">
-								<label class = "clabel">Email</label>
-								<input class = "cform" type = "Email" name = "email" id = "email">
-							</div>
-							<div class = "contactTA">							
-								<label class = "clabel">Message</label>
-								<textarea class = "cform" type = "text" name = "message" id = "message"></textarea>
-							</div>
-							</div>
-							<button class="btn btn-default btn-lg" type = "submit" id = "submit" form = "myForm">Submit</button>
 						</form>
+						<button class="btn btn-default btn-lg" type = "submit" form = "formBody" onclick = "" value = "Submit">Submit</button>
+						<?php if (isset($_POST["Name"]) && isset($_POST["Email"]) && isset($_POST["Message"]))
+							{
+								$db = new mysqli("localhost", "root", "", "messages");
+								if($db->connect_error):
+									die ("Could not connect to the database " . $db->connect_error);
+								endif;
+								
+								$name = $_POST["Name"];
+								$email = $_POST["Email"];
+								$message = $_POST["Message"];
+							  
+								$query = "insert into mymessages values ('$name', '$email', '$message')";
+								$result = $db->query($query) || die($db->error);
+								echo '<script type="text/javascript">hide();</script>';
+							} 
+						?>
 					</section>
-					<section class = "hidden">Thank you!</section>
+					<section id = "hidden">Thank you!</section>
 					</div>
 				</div>
 			</div>
@@ -229,19 +246,17 @@
 
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.js"></script>
-	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>
-	<script src="http://ajax.microsoft.com/ajax/jquery.validate/1.11.1/additional-methods.js"></script>
+	<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.7/jquery.validate.min.js"></script>
+
     <!-- Bootstrap Core JavaScript -->
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
+	<script type="text/javascript" src="js/scripts.js"></script>
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
-    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
-
     <!-- Theme JavaScript -->
-    <script src="js/grayscale.min.js"></script>
+ 
 
 </body>
 
